@@ -1,0 +1,181 @@
+* {
+    box-sizing: border-box;
+  }
+  .button
+  {
+    text-decoration: none; 
+  }
+  
+  .h6
+  {
+    font-family: 'Italianno', cursive;
+font-weight: lighter;
+    color:white;
+    border-bottom:3px solid #aa945f;
+    border-top:3px solid #aa945f ;
+    border-left:3px solid #aa945f ;
+    border-right: 3px solid #aa945f ;
+  font-size: 3.5rem;
+  margin:0;
+  padding:0;
+  }
+.cen
+{
+display: flex;
+justify-content: center;
+margin
+}
+
+
+
+  body {
+    margin: 0;
+    
+    background-image: url("../image1/img077.jpg");
+    background-size: 120%;
+    background-position: center;
+    /* font-family: 'Barlow Condensed', sans-serif; */
+    font-family: 'Playfair Display', serif;
+    animation: tighten-vinette ease-out 1800ms forwards;
+  }
+  
+  .wrapper {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo {
+    cursor: pointer;
+    text-align: center;
+  }
+  .logo:hover .restart {
+    opacity: 0.8;
+  }
+  .restart {
+    color: #fff;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: -0.08rem;
+    transition: opacity 150ms linear;
+  }
+  .world, .space {
+    position: relative;
+   
+    text-transform: uppercase;
+    letter-spacing: -0.2rem;
+    font-size: 6rem;
+    margin: 0.05rem 0.05rem 0.5rem;
+    padding: 0 0.4rem;
+    display: inline-block;
+  }
+  .space {
+    font-weight: 500;
+    letter-spacing: -0.3rem;
+    transform: translateX(-95px);
+  }
+  .world {
+    background-color:white;
+    color:#aa945f;
+    z-index: 10;
+    font-weight: bolder;
+    transform: translateX(95px);
+  }
+  .world:before {
+    z-index: -10;
+    content: '';
+    display: block;
+    
+    border: solid rgba(255, 255, 255, .2) 1px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .space:after, .space:before {
+    content: '';
+    display: block;
+    height: 3px;
+    position: absolute;
+    background-color: #fff;
+    display: block;
+    left: 0.4rem;
+    right: 0.4rem;
+  }
+  .space:before {
+    top: 0;
+  }
+  .space:after {
+    bottom: 0;
+  }
+/* this section can help for the animation of harvard art logo*/
+  .wrapper.run-animation {
+    animation: shrink ease-out 480ms forwards 4000ms;
+  }
+  .wrapper.run-animation .world {
+    transform: translateX(95px);
+    animation: slide-out-X 2000ms ease forwards;
+  }
+  .wrapper.run-animation .space {
+    transform: translateX(-95px);
+    color: transparent;
+    animation: slide-out-X 750ms ease forwards, show-text 3000ms linear forwards 1500ms;
+  }
+  .wrapper.run-animation .space:before {
+    transform: translateY(2.9rem);
+    animation: slide-out-Y 300ms ease forwards 750ms;
+  }
+  .wrapper.run-animation .space:after {
+    transform: translateY(-2.9rem);
+    animation: slide-out-Y 300ms ease forwards 750ms;
+  }
+  .wrapper.run-animation .restart {
+    opacity: 0;
+    animation: fade-down 1200ms ease 3600ms forwards;
+  }
+  .wrapper.run-animation ~ .images {
+    animation: flicker-images 1500ms 2 steps(1, end), fade-out 4500ms forwards;
+  }
+  @keyframes slide-out-X {
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes slide-out-Y {
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes show-text {
+    100% {
+      color: #fff;
+    }
+  }
+  @keyframes shrink {
+    100% {
+      transform: scale(0.8);
+    }
+  }
+  @keyframes tighten-vinette {
+    100% {
+      background-size: 120%;
+    }
+  }
+  @keyframes fade-down {
+    0% {
+      transform: translateY(-2rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 0.5;
+    }
+  }
+  @keyframes fade-out {
+    100% {
+      opacity: 0;
+    }
+  }
+  
